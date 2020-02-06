@@ -1,4 +1,6 @@
-#[get("/hello", format = "text/html")]
-pub fn hello() -> &'static str {
-    "Hello, world!"
+use rocket_contrib::json::{JsonValue};
+
+#[get("/test", format="json")]
+pub fn get_test() -> JsonValue {
+    json!({"test": "it's working!"})
 }
